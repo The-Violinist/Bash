@@ -1,29 +1,25 @@
 #!/bin/bash
 
-# Script:
-# Author:
-# Date of latest revision:
-# Purpose:
+# Author: David Armstrong
+# Date of latest revision: 08-02-2021
+# Purpose: Kill processes using user input
 
 ###FUNCTIONS###
-#Ask is the user would like to stop a process.
+#Ask if the user would like to stop a process.
 ask_user (){
-echo Would you like to kill a process?
-read yes_no
+read -p "Would you like to kill a process?"$'\n' yes_no
 }
 
-#Ask is the user would like to stop a process.
+#Ask if the user would like to stop a process.
 ask_again (){
-echo Would you like to kill another process?
-read yes_no_again
+read -p "Would you like to kill another process?"$'\n' yes_no_again
 }
 
 #Loop to stop processes
 kill_process (){
 while true
 do
-    echo Please enter a PID number to end a process
-    read pid_num
+    read -p "Please enter a PID number to end a process"$'\n' pid_num
     kill $pid_num
     ask_again
     if [ $yes_no_again == no ]
