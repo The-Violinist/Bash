@@ -17,7 +17,6 @@ read -p "How many files would you like to seach for?" num_files
 enter_files (){
 until [ $i -gt $num_files ]
 do
-    echo Please enter a file path:
     read new_file
     files+=($new_file)
     ((i++))
@@ -49,3 +48,4 @@ echo "The file has been created"$'\n'
 how_many
 enter_files
 find_files
+###END###
